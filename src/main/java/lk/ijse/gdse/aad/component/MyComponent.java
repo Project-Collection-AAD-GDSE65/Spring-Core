@@ -14,6 +14,6 @@ import org.springframework.stereotype.Component;
 //@Scope(ConfigurableListableBeanFactory.SCOPE_PROTOTYPE)
 public class MyComponent {
     MyComponent(){
-        System.out.println("My Component");
+        //System.out.println("My Component");
     }
 }
