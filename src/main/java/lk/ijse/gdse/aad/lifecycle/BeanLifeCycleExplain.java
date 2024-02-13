@@ -1,6 +1,5 @@
 package lk.ijse.gdse.aad.lifecycle;
-
-import lk.ijse.gdse.aad.di.GoodFood;
+import lk.ijse.gdse.aad.di_intro.Fitness;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ public class BeanLifeCycleExplain implements BeanNameAware,
         InitializingBean,
         DisposableBean {
     @Autowired
-    GoodFood goodFood;
+    Fitness fitness;
 
 
     BeanLifeCycleExplain(){
@@ -27,9 +26,8 @@ public class BeanLifeCycleExplain implements BeanNameAware,
     @PostConstruct
     public void init(){
         System.out.println("Init");
-        System.out.println(goodFood.eat());
+        System.out.println(fitness.walk());
     }
-
 
 
     public void myMethod01(){
@@ -61,6 +59,6 @@ public class BeanLifeCycleExplain implements BeanNameAware,
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("After properties set");
-        System.out.println(goodFood.eat());
+        System.out.println(fitness.walk());
     }
 }

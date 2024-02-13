@@ -1,19 +1,13 @@
 package lk.ijse.gdse.aad.configs;
 
 import lk.ijse.gdse.aad.bean.MyBean;
-import lk.ijse.gdse.aad.component.Timer;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 //config class with component scan
 @Configuration
-@ComponentScan(basePackages = "lk.ijse.gdse.aad")
+@ComponentScan(basePackages = "lk.ijse.gdse.aad.di")
 //@EnableScheduling
 public class AppConfig {
     //declare as a bean
