@@ -1,6 +1,8 @@
 package lk.ijse.gdse.aad;
 
 import lk.ijse.gdse.aad.configs.AppConfig;
+import lk.ijse.gdse.aad.dao_demo_AOP.DataProcess;
+import lk.ijse.gdse.aad.inject.Car;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,10 +12,15 @@ public class AppInitializer {
         var ctx =
                 new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
-       ctx.refresh();
+        ctx.refresh();
        // get a bean from the context
         var myComponent = ctx.getBean("test");
-        //System.out.println("component name "+myComponent);
+
+        //Get the bean of DataProcess and call the included methods - AOP
+        var dataProcess = ctx.getBean(DataProcess.class);
+        dataProcess.dataProcessStarted();
+        dataProcess.dataProcessEnd();
+
 
         //Check either the bean is singleton or not
         ConfigurableListableBeanFactory
