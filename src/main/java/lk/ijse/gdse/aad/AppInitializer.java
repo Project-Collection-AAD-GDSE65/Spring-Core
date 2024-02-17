@@ -22,6 +22,7 @@ public class AppInitializer {
         dataProcess.dataProcessEnd();
 
 
+
         //Check either the bean is singleton or not
         ConfigurableListableBeanFactory
                 beanFactory = ctx.getBeanFactory();
