@@ -21,6 +21,9 @@ public class AppInitializer {
         dataProcess.dataProcessStarted();
         dataProcess.dataProcessEnd();
 
+        //Get the bean of Car and call the included methods - DI
+        var car = ctx.getBean(Car.class);
+        System.out.println(car.run());
 
 
         //Check either the bean is singleton or not
