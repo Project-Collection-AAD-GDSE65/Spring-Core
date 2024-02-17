@@ -4,13 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 @Component
 public class Car {
-    private Engine engine;
-
-    //setter injection
+    //field injection
     @Autowired
-    public void setEngine(Engine engine){
-        this.engine = engine;
-    }
+    private Engine engine;
 
     public String run(){
        return engine.v12();
